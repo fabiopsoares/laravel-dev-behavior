@@ -97,4 +97,14 @@ Route::get('/posts/index','PostController@indexRedirect')->name("posts.indexRedi
     var_dump($id,$comment);
  })->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z0-9]+']);*/
 
- Route::get('/users/{id}/comments/{comment?}','UserController@userComments')->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z0-9]+']);
+ //Route::get('/users/{id}/comments/{comment?}','UserController@userComments')->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z0-9]+']);
+/*
+ Route::get('/users/1',function(){
+    $route = Route::current();
+    $name = Route::currentRouteName();
+    $action = Route::currentRouteAction();
+
+    var_dump($route,$name,$action);
+ })->name('inspect');*/
+
+ Route::get('/users/1','UserController@inspect')->name('inspect');
