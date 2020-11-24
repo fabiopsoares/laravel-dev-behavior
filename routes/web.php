@@ -39,3 +39,8 @@ Route::patch('/users/1', 'UserController@testePatch');
 
 
 Route::match(['put', 'patch'], '/users/2','UserController@testeMatch');
+
+
+Route::delete('/users/1', 'UserController@destroy');
+
+Route::any('/users', 'UserController@any');

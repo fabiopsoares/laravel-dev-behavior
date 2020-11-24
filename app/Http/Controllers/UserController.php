@@ -43,4 +43,14 @@ class UserController extends Controller
         var_dump($request);
         return "<h1>Usuário da request é 2 PUT/PATCH</h1>";
     }
+
+    public function destroy()
+    {
+        return "<h1>Disparou ação destroy usuário 1</h1>";
+    }
+
+    public function any()
+    {
+        return "<h1>Qualquer verbalização é aceita</h1>";
+    }
 }
