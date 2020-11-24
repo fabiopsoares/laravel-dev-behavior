@@ -16,10 +16,10 @@ Route::resourceVerbs([
     'create' => 'cadastrar',
     'edit' => 'editar'
 ]);*/
-
+/*
 Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 /**
 Route::view('/form','form');
