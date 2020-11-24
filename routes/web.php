@@ -10,22 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//sobreescrevendo nome da rota resource
+Route::resourceVerbs([
+    'create' => 'cadastrar',
+    'edit' => 'editar'
+]);
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/form','form');
-
 /**
- * Route::verbo_http('URI','controller@metodo');
-    Route::get($uri, $callback);
-    Route::post($uri, $callback);
-    Route::put($uri, $callback);
-    Route::patch($uri, $callback);
-    Route::delete($uri, $callback);
-    Route::options($uri, $callback);
- */
+Route::view('/form','form');
 
 Route::get('/users/1','UserController@index');
 
@@ -44,3 +40,15 @@ Route::match(['put', 'patch'], '/users/2','UserController@testeMatch');
 Route::delete('/users/1', 'UserController@destroy');
 
 Route::any('/users', 'UserController@any');
+ */
+//para metodos que não são implementados por Resource criar a rota antes da rota resource
+ Route::get('/posts/premium','PostController@premium');
+ //Route::resource('posts', 'PostController');
+ //exemplo de resource customizado passando os metodos que deseja no only
+ //Route::resource('posts', 'PostController')->only('index','show');
+  //exemplo de resource customizado passando os metodos que não deseja no except only
+  Route::resource('posts', 'PostController')->except('index','show');
+
+ //para sobre escrever um metodo implementado por resource criar essa nova rota após a rota de resource
+ //Route::get('/posts','PostController@teste');
+
