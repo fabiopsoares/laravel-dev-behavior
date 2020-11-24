@@ -12,7 +12,10 @@
 <body>
 
 <div class="container my-5">
-    <form action="" autocomplete="off">
+    <form action="{{ url('/postData') }}" method="post" autocomplete="off">
+
+        {{ csrf_field() }}
+
         <div class="form-group">
             <label for="first_name">Primeiro Nome</label>
             <input type="text" name="first_name" id="first_name" class="form-control" value="Fábio">
@@ -32,6 +35,6 @@
     </form>
 </div>
 
-<script>{{ asset('js/app.js') }}</script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

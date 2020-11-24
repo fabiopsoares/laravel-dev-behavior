@@ -16,3 +16,19 @@ Route::get('/', function () {
 });
 
 Route::view('/form','form');
+
+/**
+ * Route::verbo_http('URI','controller@metodo');
+    Route::get($uri, $callback);
+    Route::post($uri, $callback);
+    Route::put($uri, $callback);
+    Route::patch($uri, $callback);
+    Route::delete($uri, $callback);
+    Route::options($uri, $callback);
+ */
+
+Route::get('/users/1','UserController@index');
+
+Route::get('/getData','UserController@getData');
+
+Route::post('/postData','UserController@postData');
