@@ -32,3 +32,10 @@ Route::get('/users/1','UserController@index');
 Route::get('/getData','UserController@getData');
 
 Route::post('/postData','UserController@postData');
+
+Route::put('/users/1', 'UserController@testePut');
+
+Route::patch('/users/1', 'UserController@testePatch');
+
+
+Route::match(['put', 'patch'], '/users/2','UserController@testeMatch');

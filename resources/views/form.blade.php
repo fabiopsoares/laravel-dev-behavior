@@ -12,9 +12,10 @@
 <body>
 
 <div class="container my-5">
-    <form action="{{ url('/postData') }}" method="post" autocomplete="off">
+    <form action="{{ url('/users/2') }}" method="post" autocomplete="off">
 
         {{ csrf_field() }}
+        @method('PUT')
 
         <div class="form-group">
             <label for="first_name">Primeiro Nome</label>

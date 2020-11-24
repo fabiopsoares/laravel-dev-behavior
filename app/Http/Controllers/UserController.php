@@ -22,4 +22,25 @@ class UserController extends Controller
         dd($request);
         return "<h1>Disparou ação post</h1>";
     }
+
+    public function testePut(Request $request)
+    {
+
+        dd($request);
+        return "<h1>Usuário da request é 1 put</h1>";
+    }
+
+    public function testePatch(Request $request)
+    {
+
+        var_dump($request);
+        return "<h1>Usuário da request é 1 patch</h1>";
+    }
+
+    public function testeMatch(Request $request)
+    {
+
+        var_dump($request);
+        return "<h1>Usuário da request é 2 PUT/PATCH</h1>";
+    }
 }
