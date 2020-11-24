@@ -53,7 +53,7 @@ Route::any('/users', 'UserController@any');
  //para sobre escrever um metodo implementado por resource criar essa nova rota após a rota de resource
  //Route::get('/posts','PostController@teste');
 
-
+/**
 Route::get('/users',function(){
     echo 'Listagem dos usuarios da minha base';
 });
@@ -72,3 +72,29 @@ Route::get('/posts','PostController@index')->name("posts.index");
 
 Route::get('/posts/index','PostController@indexRedirect')->name("posts.indexRedirect");
 
+ */
+/*
+ Route::get('/users/{id}/comments/{comment}', function($id,$comment){
+
+    var_dump($id,$comment);
+ });*/
+
+ /*
+ Route::get('/users/{id}/comments', function($id){
+
+    var_dump($id);
+ });*/
+
+ //passando parametro opcional com validação usando expressão regular
+ /*
+ Route::get('/users/{id}/comments/{comment?}', function($id,$comment=null){
+
+    var_dump($id,$comment);
+ })->where('id','[0-9]+');
+
+ Route::get('/users/{id}/comments/{comment?}', function($id,$comment=null){
+
+    var_dump($id,$comment);
+ })->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z0-9]+']);*/
+
+ Route::get('/users/{id}/comments/{comment?}','UserController@userComments')->where(['id' => '[0-9]+', 'comment' => '[a-zA-Z0-9]+']);
